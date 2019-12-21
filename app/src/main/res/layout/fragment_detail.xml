@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.DetailFragment">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.example.tmdb.model.Movie" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dimen_large"
+        android:layout_marginTop="@dimen/dimen_normal"
+        android:layout_marginEnd="@dimen/dimen_large"
+        android:layout_marginBottom="@dimen/dimen_normal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/tvMovieOriginalTitle"
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@{@string/detail_original_title(movie.originalTitle)}" />
+
+            <ImageView
+                android:id="@+id/imgMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieOriginalTitle"
+                android:layout_margin="@dimen/dimen_normal"
+                android:imageUrl="@{movie.posterPath}"
+                android:minHeight="200dp"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/tvMovieReleaseDate"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgMovie"
+                android:text="@{@string/detail_release_date(movie.releaseDate)}" />
+
+            <TextView
+                android:id="@+id/tvMovieOriginalLanguage"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieReleaseDate"
+                android:text="@{@string/detail_original_language(movie.originalLanguage)}" />
+
+            <TextView
+                android:id="@+id/tvMovieVoteAverage"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieOriginalLanguage"
+                android:text="@{@string/detail_vote_average(String.valueOf(movie.voteAverage))}" />
+
+            <TextView
+                android:id="@+id/tvMovieVoteCount"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieVoteAverage"
+                android:text="@{@string/detail_vote_count(String.valueOf(movie.voteCount))}" />
+
+            <TextView
+                android:id="@+id/tvOverview"
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieVoteCount"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:text="@string/detail_overview" />
+
+            <TextView
+                android:id="@+id/tvMovieOverview"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOverview"
+                android:justificationMode="inter_word"
+                android:text="@{movie.overview}" />
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

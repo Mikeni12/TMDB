@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TMDB</string>
+    <string name="toolbar_title">The Movie Database</string>
+    <string name="title_favorites">Favoritas</string>
+    <string name="title_recommended">Recomendadas</string>
+    <string name="title_rated">Valoradas</string>
+    <string name="title_details">Detalles de la película</string>
+    <string name="error">Ocurrió un error al cargar la información</string>
+
+    <string name="item_release_year">Año de lanzamiento: %s</string>
+    <string name="item_vote_average">Puntuación: %s</string>
+
+    <string name="detail_original_title">Título original: %s</string>
+    <string name="detail_original_language">Idioma original: %s</string>
+    <string name="detail_release_date">Fecha de lanzamiento: %s</string>
+    <string name="detail_vote_average">Puntuación: %s</string>
+    <string name="detail_vote_count">Total de votos: %s</string>
+    <string name="detail_overview">Sinopsis</string>
+</resources>

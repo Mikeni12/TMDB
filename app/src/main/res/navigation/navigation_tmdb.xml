@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_tmdb"
+    app:startDestination="@id/navigation_favorites">
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.tmdb.view.ListFragment"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="type"
+            android:defaultValue="favorites"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@+id/navigation_detail"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_recommended"
+        android:name="com.example.tmdb.view.ListFragment"
+        tools:layout="@layout/fragment_list" >
+        <argument
+            android:name="type"
+            android:defaultValue="recommendations"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@+id/navigation_detail"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_rated"
+        android:name="com.example.tmdb.view.ListFragment"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="type"
+            android:defaultValue="rated"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@+id/navigation_detail"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.tmdb.view.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="movieUuid"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
